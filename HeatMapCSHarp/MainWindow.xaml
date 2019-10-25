@@ -1,0 +1,44 @@
+﻿<Window x:Class="HeatMapCSHarp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeatMapCSHarp"        
+        mc:Ignorable="d"
+        Title="MainWindow" WindowState="Maximized">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="plotBox" Grid.Column="0" Height="800" Width="800"></Image>
+
+        <StackPanel Grid.Column="1">
+
+            <GroupBox Header="Actions">
+                <StackPanel>
+                    <Button Name="GenerateButton" Height="40" Click="GenerateButton_Click">Generate</Button>
+                    <Button Name="ClearButton" Click="ClearButton_Click">Clear</Button>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Options">
+                <StackPanel>
+                    <ComboBox Name="StyleComboBox">
+                        <ComboBoxItem IsSelected="True">Colourised</ComboBoxItem>
+                        <ComboBoxItem>DensityMap</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="TypeComboBox">
+                        <ComboBoxItem >Random</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">Linear</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
